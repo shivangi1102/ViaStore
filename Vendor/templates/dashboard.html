@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="utf-8">
+
+    <title>ViaStore - Multi Vendor &amp; Marketplace</title>
+
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/Linearicons/Linearicons/Font/demo-files/demo.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap4/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/owl-carousel/assets/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick/slick.css'%}">
+    <link rel="stylesheet" href="{% static 'plugins/lightGallery-master/dist/css/lightgallery.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/market-place-1.css' %}">
+</head>
+
+<body>
+    <header class="header header--standard header--market-place-1 " data-sticky="true" style="background-color:powderblue;">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__left">
+                    <p>Welcome to ViaStore!</p>
+                </div>
+                <div class="header__right">
+                    <ul class="header__top-links">
+                        <li><a href="#">Store Location</a></li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header__content">
+            <div class="container">
+                <div class="header__content-left">
+                    <a class="ps-logo" href="index.html"><img src="{% static 'img/logo1.png' %}" alt=""></a>
+                </div>
+                <div class="header__content-center">
+                    <form class="ps-form--quick-search" action="" method="get">
+
+
+
+                        <input class="form-control" type="text" placeholder="Hello">
+                        <button>Search</button>
+                    </form>
+                </div>
+                <div class="header__content-right">
+                    <div class="header__actions"><a class="header__extra" href="#"><i class="icon-bubbles"></i></a>
+                    <div class="header__actions"><a class="ps-btn " href="/Vendor/logout/">Logout</a>
+
+
+
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+        <nav class="navigation">
+            <div class="container">
+                <div class="navigation__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle"><i class="icon-user"></i><span> Welcome {{request.user.username}}</span></div><br></div></div>
+        <div class="navigation__left">
+            <a class="ps-btn " href="/Vendor/product/{{ ab.ven_id}}">Add Product</a>
+        </div></div></nav>
+    </header>
+    <div class="ps-vendor-dashboard">
+        <div class="container">
+            <div class="ps-section__content">
+                <ul class="ps-section__links">
+                    <li class="active"><a href="#">Dashboard</a></li></ul>
+    <div class="ps-block--vendor-dashboard">
+    <div class="ps-block__content">
+        <div class="table-responsive">
+                            <table class="table ps-table ps-table--vendor">
+                                <thead>
+                                    <tr>
+                                        <th>Product Id</th>
+                                        <th>Tittle</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Category</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   {% for h in obj %}
+                                    <tr>
+
+                                        <td>{{h.id}}</td>
+                                        <td>{{h.prod_tittle}}</td>
+                                        <td>{{h.price}}</td>
+                                        <td>{{h.stock}}</td>
+                                        <td>{{h.category}}</td>
+
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+        </div>
+    </div>
+    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<footer class="ps-footer">
+        <div class="ps-container">
+            <div class="ps-footer__widgets">
+                <aside class="widget widget_footer widget_contact-us">
+                    <h4 class="widget-title">Contact us</h4>
+                    <div class="widget_content">
+
+                        <h3>940 124 12 45</h3>
+
+                        <ul class="ps-list--social">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <aside class="widget widget_footer">
+                    <h4 class="widget-title">Quick links</h4>
+                    <ul class="ps-list--link">
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Term & Condition</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </aside>
+
+
+            </div>
+
+            <div class="ps-footer__copyright">
+                <p>© 2020 ViaStore. All Rights Reserved</p>
+
+            </div>
+        </div>
+    </footer><footer class="ps-footer">
+        <div class="ps-container">
+            <div class="ps-footer__widgets">
+                <aside class="widget widget_footer widget_contact-us">
+                    <h4 class="widget-title">Contact us</h4>
+                    <div class="widget_content">
+
+                        <h3>940 124 12 45</h3>
+
+                        <ul class="ps-list--social">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <aside class="widget widget_footer">
+                    <h4 class="widget-title">Quick links</h4>
+                    <ul class="ps-list--link">
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Term & Condition</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </aside>
+
+
+            </div>
+
+            <div class="ps-footer__copyright">
+                <p>© 2020 ViaStore. All Rights Reserved</p>
+
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'plugins/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'plugins/popper.min.js' %}"></script>
+    <script src="{% static 'plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap4/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery.matchHeight-min.js' %}"></script>
+
+    <script src="{% static 'plugins/slick/slick/slick.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-bar-rating/dist/jquery.barrating.min.js' %}"></script>
+    <script src="{% static 'plugins/slick-animation.min.js' %}"></script>
+    <script src="{% static 'plugins/lightGallery-master/dist/js/lightgallery-all.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'plugins/sticky-sidebar/dist/sticky-sidebar.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'plugins/select2/dist/js/select2.full.min.js' %}"></script>
+   <!-- <script src="{% static 'plugins/gmap3.min.js' %}"></script>-->
+    <!-- custom scripts-->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+
+
+</html>
+
